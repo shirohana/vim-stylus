@@ -175,7 +175,7 @@ syn match cssListVal /lower-greek/ contained
 " Visual formatting
 syn keyword cssVisualProp display position top right bottom left float clear clip contained
 syn keyword cssVisualProp zoom visibility cursor direction outline resize contained
-syn keyword cssVisualProp opacity contained
+syn keyword cssVisualProp opacity filter contained
 syn match cssVisualProp /z-index/ contained
 syn match cssVisualProp /\(overflow-\(style\|[xy]\)\|overflow\)/ contained
 syn keyword cssVisualVal inline block compact contained

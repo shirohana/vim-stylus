@@ -18,6 +18,7 @@ Clone this repo into your `.vim/bundle` directory. For example:
 ### Difference
 
 - Add `Flexbox` properties support
+- Add `filter` property support
 
 ## Creds
 This is based on the excellent work from Tim Pope on sass.vim.
