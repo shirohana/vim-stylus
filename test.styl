@@ -81,3 +81,17 @@ vendor(prop, args)
   {prop} args
   -moz-{prop} args
   -webkit-{prop} args
+
+.container
+  display: flex
+  align-items: flex-end
+  align-content: stretch
+  flex-direction: column
+  flex-basis: 320px
+  flex-wrap: wrap
+  &:first-child
+    order: -1
+    justify-content: center
+  &:nth-child(2)
+    flex-grow: 1
+    flex-shrink: 0

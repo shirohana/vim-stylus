@@ -142,7 +142,11 @@ syn match cssBoxProp /\(min\|max\)-\(width\|height\)/ contained
 syn match cssBoxProp /box-\(align\|decoration-break\|direction\|flex-group\|flex\|lines\)/ contained
 syn match cssBoxProp /box-\(ordinal-group\|orient\|pack\|shadow\|sizing\)/ contained
 syn match cssBoxProp /\(outline-\(color\|offset\|style\|width\)\|outline\)/ contained
+syn match cssBoxProp /flex\(-\(basis\|direction\|flow\|grow\|shrink\|wrap\)\)/ contained
+syn match cssBoxProp /\(justify\|align\|place\)-\(self\|content\|items\)/ contained
 syn keyword cssBoxProp width height contained
+syn keyword cssBoxProp order contained
+syn keyword cssBoxProp flex row wrap contained
 
 " Text
 syn match cssTextProp /text-\(align-last\|align\|decoration\|emphasis\|height\|indent\|justify\|outline\|shadow\|transform\|wrap\|overflow\)\|text/ contained

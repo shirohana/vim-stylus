@@ -15,5 +15,9 @@ Clone this repo into your `.vim/bundle` directory. For example:
     cd ~/.vim/bundle
     git clone git://github.com/wavded/vim-stylus.git
 
+### Difference
+
+- Add `Flexbox` properties support
+
 ## Creds
 This is based on the excellent work from Tim Pope on sass.vim.
