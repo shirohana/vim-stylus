@@ -78,8 +78,14 @@ syn match cssBackgroundVal /no-repeat/ contained
 syn keyword cssBackgroundVal circle ellipse to at contained
 syn match cssBackgroundVal /\(closest\|farthest\)-\(side\|corner\)/ contained
 
-syn region cssFuncVal start="\(url\|calc\|min\|max\|counter\|cycle(\)" end=")" oneline contained contains=cssString,cssValueLength,cssValueInteger,cssValueNumber,cssValueAngle,cssValueTime,cssValueFrequency
+" Grid
+syn match cssGridVal /\(min\|max\)-content/ contained
+syn match cssGridVal /auto-\(fill\|fit\)/ contained
+
+syn region cssFuncVal start="\(url\|calc\|min\|max\|counter\|cycle\)(" end=")" oneline contained contains=cssString,cssValueLength,cssValueInteger,cssValueNumber,cssValueAngle,cssValueTime,cssValueFrequency
 syn region cssFuncVal start="\(linear\|radial\|repeating-linear\|repeating-radial\)-gradient(" end=")" oneline contained contains=cssString,cssValueLength,cssValueInteger,cssValueNumber,cssValueAngle,cssValueTime,cssValueFrequency,cssVisualProp,cssColorVal
+" TODO Mix functions togethrer temporary
+syn region cssFuncVal start="\(repeat\|minmax\|fit-content\)(" end=")" oneline contained contains=cssString,cssValueLength,cssValueInteger
 
 syn match cssBorderProp /\(border-\(color\|style\|width\|radius\)\|border\)/ contained
 syn match cssBorderProp /border-\(image-\(source\|slice\|width\|outset\|repeat\)\|image\)/ contained
@@ -144,9 +150,14 @@ syn match cssBoxProp /box-\(ordinal-group\|orient\|pack\|shadow\|sizing\)/ conta
 syn match cssBoxProp /\(outline-\(color\|offset\|style\|width\)\|outline\)/ contained
 syn match cssBoxProp /flex\(-\(basis\|direction\|flow\|grow\|shrink\|wrap\)\)/ contained
 syn match cssBoxProp /\(justify\|align\|place\)-\(self\|content\|items\)/ contained
+syn match cssBoxProp /grid-auto\(-\(columns\|flow\|rows\)\)\?/ contained
+syn match cssBoxProp /grid-\(column\|row\)\(-\(start\|end\)\)\?/ contained
+syn match cssBoxProp /grid\(-\(column\|row\)\)\?-gap/ contained
+syn match cssBoxProp /grid-template\(-\(areas\|columns\|rows\)\)\?/ contained
 syn keyword cssBoxProp width height contained
 syn keyword cssBoxProp order contained
 syn keyword cssBoxProp flex row wrap contained
+syn keyword cssBoxProp grid grid-area contained
 
 " Text
 syn match cssTextProp /text-\(align-last\|align\|decoration\|emphasis\|height\|indent\|justify\|outline\|shadow\|transform\|wrap\|overflow\)\|text/ contained
@@ -298,6 +309,7 @@ if version >= 508 || !exists("did_css_syn_inits")
   HiLink cssVisualVal Type
   HiLink cssBorderVal Type
   HiLink cssBackgroundVal Type
+  HiLink cssGridVal Type
   HiLink cssFuncVal Function
   HiLink cssAdvancedVal Function
 
@@ -325,7 +337,7 @@ endif
 syn case ignore
 
 syn cluster stylusCssSelectors contains=cssTagName,cssSelector,cssPseudo
-syn cluster stylusCssValues contains=cssValueLength,cssValueInteger,cssValueNumber,cssValueAngle,cssValueTime,cssValueFrequency,cssColorVal,cssCommonVal,cssFontVal,cssListVal,cssTextVal,cssVisualVal,cssBorderVal,cssBackgroundVal,cssFuncVal,cssAdvancedVal
+syn cluster stylusCssValues contains=cssValueLength,cssValueInteger,cssValueNumber,cssValueAngle,cssValueTime,cssValueFrequency,cssColorVal,cssCommonVal,cssFontVal,cssListVal,cssTextVal,cssVisualVal,cssBorderVal,cssBackgroundVal,cssGridVal,cssFuncVal,cssAdvancedVal
 syn cluster stylusCssProperties contains=cssBackgroundProp,cssTableProp,cssBorderProp,cssFontProp,cssColorProp,cssBoxProp,cssTextProp,cssListProp,cssVisualProp,cssAdvancedProp,cssCommonProp,cssSpecialProp
 
 syn match stylusVariable "$\?[[:alnum:]_-]\+"
